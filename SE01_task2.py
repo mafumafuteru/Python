@@ -10,15 +10,18 @@ for i in range(12):
             continue
         correct = 0
         misplaced = 0
+        #covert guess to a set to remove the duplicates
         guess_set = set(guess)
 
         for j in guess_set:
                if j in CODE:
+                      #only count each color once
                       if guess.count(j) <= CODE.count(j):
                              misplaced += min(guess.count(j), CODE.count(j))
         for j in range(4):
                 if guess[j]== CODE[j]:
                         correct += 1
+                        #remove from misplaced count if it's also correct
                         misplaced -= 1
         if correct == 4:
                 print("Congrats! You break the code!")
