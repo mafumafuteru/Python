@@ -1,10 +1,13 @@
 import random
 
 COLORS = ["RED","ORANGE","YELLOW","GREEN","BLUE","PURPLE"]
-CODE = [random.choice(COLORS) for a in range(4)] 
+CODE = random.sample(COLORS, k=4)
 
 for i in range(12):
-        guess = input("Please write four colors in the order you think(in upper case and seperate with spaces): ") .split()
+        guess = input("Please write four nonrepeat colors in the order you think(in upper case and seperate with spaces): ") .split()
+        if len(guess) != 4 or not all(color in COLORS for color in guess):
+            print("Please write four valid colors from the list: ", COLORS)
+            continue
         correct = 0
         wrong_placed = 0
         for j in range(4):
