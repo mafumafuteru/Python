@@ -1,6 +1,7 @@
 import random
 
 COLORS = ["RED","ORANGE","YELLOW","GREEN","BLUE","PURPLE"]
+# select 4 colors randomly
 CODE = [random.choice(COLORS) for a in range(4)] 
 
 for i in range(12):
@@ -16,3 +17,4 @@ for i in range(12):
                 print (f"Only {correct} colors are correct.")
 else:
        print("Sorry, you run out of the chances to guess!") 
+
